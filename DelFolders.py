@@ -3,9 +3,9 @@
 
 import os
 
-#Number of directories in base folder
 BaseFolder = input('Enter the base folder path here: ')
 
+#Number of directories in the base folder
 FilesNum = 0
 DirNum = 0
 
@@ -17,7 +17,7 @@ for base, dirs, files in os.walk(BaseFolder):
 
 #Delete empty folders
 def drop_empty_folders(BaseFolder):
-    """Verify that every empty folder removed in local storage."""
+    """Removes every empty folder inside the BaseFolder"""
 
     for root, dirs, files in os.walk(BaseFolder, topdown=False):
         if not dirs and not files:
@@ -28,7 +28,6 @@ for i in range(DirNum):
     drop_empty_folders(BaseFolder)
     
 #Check how many empty directories were removed and that no file was deleted
-
 FilesNumAft = 0
 DirNumAft = 0
 
