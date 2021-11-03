@@ -1,10 +1,9 @@
 #! python3
 # coding: utf-8
 
-#Number of directories in base folder
-
 import os
 
+#Number of directories in base folder
 BaseFolder = input('Enter the base folder path here: ')
 
 FilesNum = 0
@@ -17,7 +16,6 @@ for base, dirs, files in os.walk(BaseFolder):
         FilesNum += 1
 
 #Delete empty folders
-
 def drop_empty_folders(BaseFolder):
     """Verify that every empty folder removed in local storage."""
 
@@ -25,12 +23,11 @@ def drop_empty_folders(BaseFolder):
         if not dirs and not files:
             os.rmdir(root)
 
-#the function must be executed same times as count of subfolder paths            
-
+#The function must be executed same times as count of subfolder paths            
 for i in range(DirNum):
     drop_empty_folders(BaseFolder)
     
-#check how many empty directories were removed and that no file was deleted
+#Check how many empty directories were removed and that no file was deleted
 
 FilesNumAft = 0
 DirNumAft = 0
@@ -41,5 +38,5 @@ for base, dirs, files in os.walk(BaseFolder):
     for Files in files:
         FilesNumAft += 1
 
-print('Number of files deleted',FilesNum-FilesNumAft) #should always be zero...we dont want any file deleted, just the empty folders
+print('Number of files deleted',FilesNum-FilesNumAft) #Should be zero...we don't want any files deleted. Just the empty folders.
 print('Number of Directories deleted',DirNum-DirNumAft)
