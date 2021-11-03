@@ -1,5 +1,5 @@
 # Delete Folders
-Delete all the empty subfolders of a base folder
+Deletes all the empty subfolders of a base folder.
 
 This little script firstly executes an input where we have to write the full path of the base directory (ex. C:\Users\xxx\Base). 
 
